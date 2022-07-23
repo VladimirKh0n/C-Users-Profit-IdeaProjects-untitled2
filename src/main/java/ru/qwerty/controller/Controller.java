@@ -24,10 +24,6 @@ public class Controller {
     public ResponseEntity <String> qqq(@PathVariable int id){
         return ResponseEntity.status(200).body(id + "");
     }
-    @GetMapping (value = "/sum")
-    public ResponseEntity <String> sum(@RequestParam(value = "a") int x, @RequestParam(value = "b") int y){
-        return ResponseEntity.status(200).body(x + y + "");
-    }
     @GetMapping (value = "/get")
     public ResponseEntity <String> get(@RequestParam(value = "name") String x){
         String result = map.get(x);
@@ -52,7 +48,4 @@ public class Controller {
         else
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("not found");
     }
-
-
-
 }
